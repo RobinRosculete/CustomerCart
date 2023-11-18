@@ -1,0 +1,103 @@
+/* Reset default browser styles */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(to right, #ffc9c9, rgb(255, 97, 97));
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Container styles */
+.container {
+  width: 80%;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.container:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Header styles */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  perspective: 1000px; /* Adding perspective for 3D effect */
+}
+
+h1 {
+  color: #333;
+  font-size: 3em;
+  letter-spacing: 1px;
+  transition: transform 0.5s; /* Adding transition for smoothness */
+}
+
+h1:hover {
+  transform: rotateY(10deg) rotateX(10deg); /* Applying the 3D rotation on hover */
+}
+
+/* Main content styles */
+main {
+  text-align: center;
+  color: #555;
+  font-size: 1.2em;
+  line-height: 1.6;
+  perspective: 1000px; /* Adding perspective for 3D effect */
+}
+
+main p {
+  transition: transform 0.5s; /* Adding transition for smoothness */
+}
+
+main p:hover {
+  transform: rotateY(5deg) rotateX(5deg); /* Applying the 3D rotation on hover */
+}
+
+/* Button Hover Effect */
+button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+/* Footer styles */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #777;
+  font-size: 0.8em;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Hover animation for footer */
+footer:hover {
+  opacity: 1;
+}

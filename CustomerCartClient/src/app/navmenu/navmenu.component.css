@@ -1,0 +1,90 @@
+/* navmenu.component.css */
+
+/* Reset default margin and padding for better consistency */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set full height for the body */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Full viewport height */
+  font-family: Arial, sans-serif; /* Choose your preferred font */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+/* Modern header styling */
+header {
+  background: linear-gradient(
+    135deg,
+    #ff6161,
+    #ff9770
+  ); /* Gradient background */
+  padding: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom: 2px solid #ffffff; /* Border to separate header */
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 999; /* Ensure header is on top of other elements */
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+/* Modern button styles */
+button {
+  border: none;
+  color: #ff6161;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 8px 16px;
+  cursor: pointer;
+  border-radius: 12px;
+  background-color: #ffffff; /* Initial background color */
+  transition: background-color 0.4s ease, transform 0.3s ease-out; /* Smooth transitions */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  outline: none; /* Remove default button outline */
+}
+
+/* Hover effect for the button */
+button:hover {
+  background-color: #ff9770; /* Darker background color on hover */
+  transform: translateY(-4px) scale(1.05); /* Lift and slightly scale button on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+}
+
+/* Animation for button click */
+button:active {
+  transform: translateY(1px); /* Slight downward push when clicked */
+}
+
+/* Animation for header */
+header {
+  transition: padding 0.3s ease, background-color 0.4s ease,
+    box-shadow 0.4s ease; /* Smooth transitions */
+}
+
+/* Shrink header padding on scroll */
+header.scrolled {
+  padding: 15px 20px;
+  background: linear-gradient(
+    135deg,
+    #ffffff,
+    #ff6161
+  ); /* Change gradient on scroll */
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4); /* Adjusted shadow on scroll */
+}

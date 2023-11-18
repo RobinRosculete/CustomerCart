@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/727c21ad-6b90-47a8-a285-bf35f591da5c/resourceGroups/CustomerCart_group/providers/Microsoft.Web/sites/CustomerCart",
+  "appService.deploySubpath": "dist"
+}
