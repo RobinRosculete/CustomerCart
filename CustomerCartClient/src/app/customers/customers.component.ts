@@ -9,7 +9,6 @@ import { environment } from "src/environments/environment";
 })
 export class CustomersComponent {
   customers: Customers[] = [];
-  baseUrl: string = "https://customercartapi.azurewebsites.net";
 
   constructor(http: HttpClient) {
     http.get<Customers[]>(environment.endpoint + "api/Customers").subscribe({
