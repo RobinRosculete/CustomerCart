@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CustomerCartModel;
+namespace CustomerCartAPI.Models;
 
 public partial class Order
 {
@@ -9,9 +9,11 @@ public partial class Order
 
     public int? CustomerId { get; set; }
 
-    public DateOnly? OrderDate { get; set; }
+    public string Product { get; set; } = null!;
 
-    public decimal? TotalAmount { get; set; }
+    public DateOnly OrderDate { get; set; }
+
+    public decimal TotalAmount { get; set; }
 
     public virtual Customer? Customer { get; set; }
 }

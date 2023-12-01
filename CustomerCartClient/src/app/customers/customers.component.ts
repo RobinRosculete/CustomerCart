@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { environment } from "src/environments/environment";
+import { Customers } from "../models/customer.interface";
 
 @Component({
   selector: "app-customers",
@@ -20,12 +21,4 @@ export class CustomersComponent {
       },
     });
   }
-}
-
-interface Customers {
-  id: number;
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
 }

@@ -1,3 +1,4 @@
+<h1>View Orders</h1>
 <table
   class="table table-striped"
   aria-labelledby="tableLabel"
@@ -8,8 +9,9 @@
       <th>First Name</th>
       <th>Last Name</th>
       <th>Email</th>
+      <th>Product</th>
       <th>Order Date</th>
-      <th>Order Amount</th>
+      <th>Order Price</th>
       <th>Total Money Spent</th>
     </tr>
   </thead>
@@ -18,6 +20,8 @@
       <td>{{ order.firstName }}</td>
       <td>{{ order.lastName }}</td>
       <td>{{ order.email }}</td>
+      <td>{{ order.product }}</td>
+
       <td>{{ order.orderDate }}</td>
       <td>{{ order.orderAmount }}</td>
       <td>{{ order.totalSpent }}</td>

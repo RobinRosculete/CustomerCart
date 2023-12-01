@@ -9,8 +9,12 @@ import { CustomersComponent } from "./customers/customers.component";
 import { environment } from "../environments/environment";
 import { MsalInterceptor, MsalModule } from "@azure/msal-angular";
 import { InteractionType, PublicClientApplication } from "@azure/msal-browser";
-import { ViewOrdersComponent } from './view-orders/view-orders.component';
-import { AddOrdersComponent } from './add-orders/add-orders.component';
+import { ViewOrdersComponent } from "./view-orders/view-orders.component";
+import { MatInputModule } from "@angular/material/input";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { UpdateOrdersComponent } from "./update-orders/update-orders.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -19,12 +23,15 @@ import { AddOrdersComponent } from './add-orders/add-orders.component';
     NavmenuComponent,
     CustomersComponent,
     ViewOrdersComponent,
-    AddOrdersComponent,
+    UpdateOrdersComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    MatInputModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
     MsalModule.forRoot(
       new PublicClientApplication({
         auth: {
@@ -51,6 +58,7 @@ import { AddOrdersComponent } from './add-orders/add-orders.component';
         ]),
       }
     ),
+    BrowserAnimationsModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: MsalInterceptor, multi: true },

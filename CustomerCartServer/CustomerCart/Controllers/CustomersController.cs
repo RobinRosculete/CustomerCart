@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using CustomerCartModel;
+using CustomerCartAPI.Models;
 
 
 
@@ -10,8 +10,8 @@ namespace CustomerCartAPI.Controllers
     [Route("api/[controller]")]
     public class CustomersController : Controller
     {
-        private readonly CustomerOrdersDatabaseContext _db;
-        public CustomersController(CustomerOrdersDatabaseContext db)
+        private readonly CustomerordersdatabasegoldenContext _db;
+        public CustomersController(CustomerordersdatabasegoldenContext db)
         {
             _db = db;
         }
@@ -22,7 +22,21 @@ namespace CustomerCartAPI.Controllers
         {
             return _db.Customers.ToList();
         }
+        // GET: api/<CountriesController>
 
+        [HttpGet]
+        [Route("customer-email")]
+        public IEnumerable<string> GetEmail()
+        {
+            var emails = _db.Customers.Select(customer => customer.Email).ToList();
+            return emails;
+        }
+        // GET api/values/5
+        [HttpGet("{id}")]
+        public Customer Get(int id)
+        {
+            return _db.Customers.FirstOrDefault(c => c.CustomerId == id); // Return the order if found
+        }
     }
 }
 

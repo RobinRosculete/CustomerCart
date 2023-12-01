@@ -1,0 +1,66 @@
+<div class="container">
+  <h1>Update Orders</h1>
+  <div class="update-orders">
+    <h1>{{ title }}</h1>
+    <p *ngIf="!order"><em>Loading…</em></p>
+    <div [formGroup]="form" (ngSubmit)="onSubmit()">
+      <!-- OrderId -->
+      <mat-form-field>
+        <mat-label>Order ID:</mat-label>
+        <input
+          matInput
+          formControlName="orderId"
+          required
+          placeholder="Type an Order ID"
+        />
+      </mat-form-field>
+      <!-- Product -->
+      <mat-form-field>
+        <mat-label>Product:</mat-label>
+        <input
+          matInput
+          formControlName="product"
+          required
+          placeholder="Type a product"
+        />
+      </mat-form-field>
+      <!-- OrderDate -->
+      <mat-form-field>
+        <mat-label>Order Date:</mat-label>
+        <input
+          matInput
+          formControlName="orderDate"
+          required
+          placeholder="Insert order date"
+        />
+      </mat-form-field>
+      <!-- TotalAmount -->
+      <mat-form-field>
+        <mat-label>Total Amount:</mat-label>
+        <input
+          matInput
+          formControlName="totalAmount"
+          required
+          placeholder="Insert total amount"
+        />
+      </mat-form-field>
+      <div>
+        <button
+          mat-flat-button
+          color="primary"
+          type="submit"
+          (click)="onSubmit()"
+        >
+          Save
+        </button>
+        <button
+          mat-flat-button
+          color="secondary"
+          [routerLink]="['/view-orders']"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

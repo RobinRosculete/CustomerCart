@@ -3,8 +3,8 @@ import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
 import { CustomersComponent } from "./customers/customers.component";
 import { ViewOrdersComponent } from "./view-orders/view-orders.component";
-import { AddOrdersComponent } from "./add-orders/add-orders.component";
 import { MsalGuard } from "@azure/msal-angular";
+import { UpdateOrdersComponent } from "./update-orders/update-orders.component";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -19,8 +19,8 @@ const routes: Routes = [
     canActivate: [MsalGuard],
   },
   {
-    path: "add-orders",
-    component: AddOrdersComponent,
+    path: "update-orders",
+    component: UpdateOrdersComponent,
     canActivate: [MsalGuard],
   },
 ];

@@ -1,4 +1,4 @@
-﻿using CustomerCartModel;
+﻿using CustomerCartAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Web;
 
@@ -15,8 +15,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors();
-builder.Services.AddDbContext<CustomerOrdersDatabaseContext>();
-builder.Services.AddDbContext<CustomerOrdersDatabaseContext>(optionsBuilder =>
+builder.Services.AddDbContext<CustomerordersdatabasegoldenContext>();
+builder.Services.AddDbContext<CustomerordersdatabasegoldenContext>(optionsBuilder =>
 optionsBuilder.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
 serverVersion));
 
@@ -66,7 +66,8 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapGet("/", () => "Hello World!");
 app.UseCors();
-app.MapControllers().RequireAuthorization();
+app.MapControllers();
+//app.MapControllers().RequireAuthorization();
 
 app.Run();
 
