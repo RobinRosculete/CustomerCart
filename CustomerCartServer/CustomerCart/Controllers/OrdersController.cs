@@ -42,7 +42,15 @@ namespace CustomerCartAPI.Controllers
                                   }).ToList();
             return customerOrders;
         }
-
+        // GET: api/values
+        [HttpGet]
+        [Route("order-ids")]
+        public IEnumerable<int> GetOrderIDs()
+        {
+            // Retrieve all order IDs from the Orders table in the database
+            var orderIds = _db.Orders.Select(o => o.OrderId).ToList();
+            return orderIds;
+        }
 
         // GET api/values/5
         [HttpGet("{id}")]
