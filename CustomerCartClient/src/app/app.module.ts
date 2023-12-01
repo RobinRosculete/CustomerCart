@@ -9,6 +9,8 @@ import { CustomersComponent } from "./customers/customers.component";
 import { environment } from "../environments/environment";
 import { MsalInterceptor, MsalModule } from "@azure/msal-angular";
 import { InteractionType, PublicClientApplication } from "@azure/msal-browser";
+import { ViewOrdersComponent } from './view-orders/view-orders.component';
+import { AddOrdersComponent } from './add-orders/add-orders.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { InteractionType, PublicClientApplication } from "@azure/msal-browser";
     HomeComponent,
     NavmenuComponent,
     CustomersComponent,
+    ViewOrdersComponent,
+    AddOrdersComponent,
   ],
   imports: [
     BrowserModule,
