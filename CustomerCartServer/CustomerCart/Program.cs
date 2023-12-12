@@ -40,7 +40,19 @@ if (!builder.Environment.IsDevelopment())
                              .AllowAnyMethod());
     });
 }
+/*
 
+if (!builder.Environment.IsDevelopment())
+{
+    builder.Services.AddCors(options =>
+    {
+        options.AddPolicy("AllowSpecificOrigins",
+            builder => builder.WithOrigins("https://localhost:7002")
+                             .AllowAnyHeader()
+                             .AllowAnyMethod());
+    });
+}
+*/
 
 //Building the App
 var app = builder.Build();
@@ -66,8 +78,8 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapGet("/", () => "Hello World!");
 app.UseCors();
-app.MapControllers();
-//app.MapControllers().RequireAuthorization();
+//app.MapControllers();
+app.MapControllers().RequireAuthorization();
 
 app.Run();
 

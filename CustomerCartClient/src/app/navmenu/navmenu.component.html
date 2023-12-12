@@ -1,8 +1,26 @@
 <header>
   <button mat-icon-button [routerLink]="['/']">Home</button>
-  <button mat-flat-button [routerLink]="['/customers']">View Customers</button>
-  <button mat-flat-button [routerLink]="['/view-orders']">View Orders</button>
-  <button mat-flat-button [routerLink]="['/update-orders']">
+  <button mat-flat-button *ngIf="isUserLoggedIn" [routerLink]="['/customers']">
+    View Customers
+  </button>
+  <button
+    mat-flat-button
+    *ngIf="isUserLoggedIn"
+    [routerLink]="['/view-orders']"
+  >
+    View Orders
+  </button>
+  <button
+    mat-flat-button
+    *ngIf="isUserLoggedIn"
+    [routerLink]="['/update-orders']"
+  >
     Update Orders
+  </button>
+  <button mat-raised-button *ngIf="!isUserLoggedIn" (click)="login()">
+    Login
+  </button>
+  <button mat-raised-button *ngIf="isUserLoggedIn" (click)="logout()">
+    Logout
   </button>
 </header>

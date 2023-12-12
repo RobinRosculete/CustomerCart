@@ -2,7 +2,8 @@
 namespace CustomerCartAPI.DTOs;
 public class CustomerOrders
 {
-	
+    public int OrderId { get; set; }
+
     public string? FirstName { get; set; }
 
     public string? LastName { get; set; }

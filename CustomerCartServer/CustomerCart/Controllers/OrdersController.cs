@@ -31,6 +31,7 @@ namespace CustomerCartAPI.Controllers
                                   join order in _db.Orders on customer.CustomerId equals order.CustomerId
                                   select new CustomerOrders
                                   {
+                                      OrderId = order.OrderId,
                                       FirstName = customer.FirstName,
                                       LastName = customer.LastName,
                                       Email = customer.Email,

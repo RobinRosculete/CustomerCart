@@ -7,7 +7,12 @@ import { NavmenuComponent } from "./navmenu/navmenu.component";
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { CustomersComponent } from "./customers/customers.component";
 import { environment } from "../environments/environment";
-import { MsalInterceptor, MsalModule } from "@azure/msal-angular";
+import {
+  MsalGuard,
+  MsalInterceptor,
+  MsalModule,
+  MsalRedirectComponent,
+} from "@azure/msal-angular";
 import { InteractionType, PublicClientApplication } from "@azure/msal-browser";
 import { ViewOrdersComponent } from "./view-orders/view-orders.component";
 import { MatInputModule } from "@angular/material/input";
@@ -15,6 +20,8 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { UpdateOrdersComponent } from "./update-orders/update-orders.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule } from "@angular/forms"; // Import FormsModule
+import { AuthenticationService } from "./services/authenticate.services";
 
 @NgModule({
   declarations: [
@@ -30,6 +37,8 @@ import { ReactiveFormsModule } from "@angular/forms";
     AppRoutingModule,
     HttpClientModule,
     MatInputModule,
+    BrowserModule,
+    FormsModule,
     MatFormFieldModule,
     ReactiveFormsModule,
     MsalModule.forRoot(
@@ -62,7 +71,8 @@ import { ReactiveFormsModule } from "@angular/forms";
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: MsalInterceptor, multi: true },
+    MsalGuard,
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent, MsalRedirectComponent],
 })
 export class AppModule {}

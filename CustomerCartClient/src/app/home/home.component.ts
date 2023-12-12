@@ -1,4 +1,3 @@
-import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { environment } from "src/environments/environment";
 
@@ -8,11 +7,8 @@ import { environment } from "src/environments/environment";
   styleUrls: ["./home.component.css"],
 })
 export class HomeComponent implements OnInit {
-  constructor(private http: HttpClient) {}
+  //isUserLoggedIn: boolean = false;
+  constructor() {}
 
-  ngOnInit(): void {
-    this.http
-      .get(environment.endpoint)
-      .subscribe((result) => console.log(result));
-  }
+  ngOnInit(): void {}
 }

@@ -1,4 +1,5 @@
 export interface CustomerOrders {
+  orderId: number;
   firstName: string;
   lastName: string;
   product: string;

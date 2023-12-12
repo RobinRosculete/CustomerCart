@@ -3,17 +3,18 @@
   <div class="update-orders">
     <h1>{{ title }}</h1>
     <p *ngIf="!order"><em>Loading…</em></p>
-    <div [formGroup]="form" (ngSubmit)="onSubmit()">
-      <!-- OrderId -->
-      <mat-form-field>
-        <mat-label>Order ID:</mat-label>
-        <input
-          matInput
-          formControlName="orderId"
-          required
-          placeholder="Type an Order ID"
-        />
-      </mat-form-field>
+    <p *ngIf="!order"><em>Loading…</em></p>
+    <select
+      [(ngModel)]="selectedOrderId"
+      (change)="onOrderIdSelected()"
+      class="custom-dropdown"
+    >
+      <option *ngFor="let orderId of orderIds" [value]="orderId">
+        {{ orderId }}
+      </option>
+    </select>
+    <!-- Select ID-->
+    <div [formGroup]="form">
       <!-- Product -->
       <mat-form-field>
         <mat-label>Product:</mat-label>
