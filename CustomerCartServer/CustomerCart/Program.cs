@@ -30,18 +30,20 @@ if (builder.Environment.IsDevelopment())
 
 builder.Services.AddAuthorization();
 
+
 if (!builder.Environment.IsDevelopment())
 {
     builder.Services.AddCors(options =>
     {
         options.AddPolicy("AllowSpecificOrigins",
-            builder => builder.WithOrigins("https://customercart.azurewebsites.net")
+            builder => builder.WithOrigins("https://customercartapi.azurewebsites.net/")
                              .AllowAnyHeader()
                              .AllowAnyMethod());
     });
 }
-/*
 
+
+/*
 if (!builder.Environment.IsDevelopment())
 {
     builder.Services.AddCors(options =>
@@ -53,6 +55,7 @@ if (!builder.Environment.IsDevelopment())
     });
 }
 */
+
 
 //Building the App
 var app = builder.Build();
@@ -76,7 +79,7 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/", () => "Hello World! From API");
 app.UseCors();
 //app.MapControllers();
 app.MapControllers().RequireAuthorization();
